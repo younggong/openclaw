@@ -429,6 +429,7 @@ export function buildExecApprovalPendingToolResult(params: {
             ? (buildExecApprovalUnavailableReplyPayload({
                 warningText: params.warningText,
                 reason: params.unavailableReason,
+                channel: params.initiatingSurface.channel,
                 channelLabel: params.initiatingSurface.channelLabel,
                 sentApproverDms: params.sentApproverDms,
               }).text ?? "")
@@ -449,6 +450,7 @@ export function buildExecApprovalPendingToolResult(params: {
         ? ({
             status: "approval-unavailable",
             reason: params.unavailableReason,
+            channel: params.initiatingSurface.channel,
             channelLabel: params.initiatingSurface.channelLabel,
             sentApproverDms: params.sentApproverDms,
             host: params.host,
